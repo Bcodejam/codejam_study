@@ -2,7 +2,7 @@ import sys
 from itertools import permutations
 
 n=int(input())
-num=list(permutations([1,2,3,4,5,6,7,8,9], 3))
+num=list(permutations(range(10), 3))
 
 for _ in range(n):
     q, s, b = map(int, input().split())

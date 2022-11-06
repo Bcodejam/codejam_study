@@ -6,15 +6,12 @@ class Main{
     static int s;
     static int answer = 0;
     static int[] arr=new int[20];
-    static void check(int idx, int cnt, int size, int sum){
-        if(cnt>=size){
-            if(sum==s) answer++;
-            return;
+    static int check(int idx, int sum){
+        if(idx>=n){
+            if(sum==s) return 1;
+            else return 0;
         }
-        if(idx>=n) return;
-        for(int i=idx;i<n;i++){
-            check(i+1, cnt+1, size, sum+arr[i]);
-        }
+        return check(idx+1, sum+arr[idx])+check(idx+1, sum);
     }
     public static void main(String[] args){
 
@@ -26,12 +23,8 @@ class Main{
             arr[i]=sc.nextInt();
         }
         
-        for(int size=1;size<=n;size++){
-            for(int i=0;i<=n-size;i++){
-                check(i+1, 1, size, arr[i]);
-            }
-        }
-
+        answer=check(0,0);
+        if(s==0) answer-=1;
         System.out.println(answer);
     }
 }
