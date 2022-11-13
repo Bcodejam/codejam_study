@@ -8,6 +8,7 @@ before = 0
 cube.sort(reverse=True)
 
 for w, cnt in cube:
+
     # 같은 공간에 들어갈 수 있는 큐브의 갯수는
     # 8배씩 늘어 난다(ex ) 2x2x2 공간에 2x2x2 큐브는 1개 , 1x1x1 큐브는 8개 들어감)
     before *= 8
@@ -22,6 +23,8 @@ for w, cnt in cube:
     ans += maxCnt
     before += maxCnt
 
+# 1x1x1까지 루프를 다 돌면 before 는 1x1x1이 몇개 있는지(부피가 몇인지) 의 값을 가지고있다.
+# 전체 부피와 같다면 다 채운것이므로 큐브의 갯수를 출력
 if before == volume:
     print(ans)
 else:
