@@ -1,4 +1,4 @@
-// O(4^(log_2_N))
+// O(N^2)
 import java.util.*;
 
 class Main{
