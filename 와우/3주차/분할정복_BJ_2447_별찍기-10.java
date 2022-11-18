@@ -1,15 +1,10 @@
 import java.util.*;
 
 class Main{
-    static String[] arr =new String[3];
     static char[][] answer = new char[6561][6561];
     static void f(int x, int y, int n){
-        if(n==3){
-            for(int i=0;i<3;i++){
-                for(int j=0;j<3;j++){
-                    answer[y+i][x+j] = arr[i].charAt(j);
-                }
-            }
+        if(n==1){
+            answer[y][x]='*';
             return;
         }
         
@@ -32,10 +27,6 @@ class Main{
         StringBuffer sb = new StringBuffer();
         int n = sc.nextInt();
 
-        arr[0]="***";
-        arr[1]="* *";
-        arr[2]="***";
-        
         f(0,0,n);
 
         for(int i=0;i<n;i++) {
@@ -46,5 +37,4 @@ class Main{
         }
         System.out.println(sb);
     }
-        
 }
