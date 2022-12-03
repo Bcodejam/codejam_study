@@ -11,4 +11,6 @@ for i in range(1 , len(lst) + 1):
         if sum(j) == S : # 더해보고 S랑 같으면 count
             answer += 1 
 
+
+
 print(answer)
