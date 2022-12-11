@@ -7,11 +7,9 @@ def isLegal(string) :
     if string[i] == '<' :
       for j in range(i + 1 , len(string)) :
         if string[j] == '>' :
-          #스택에 넣고, 규칙에 위배되면 바로 False를 return하여 illegal 출력
-          if not stacking(string[i+1 : j]) :
-            return False
-          else :
-            break
+          #스택에 넣기
+          stacking(string[i+1 : j]) 
+          break
   #스택에 남아있는경우 요소가 닫히지 않았단 뜻이므로 illegal 출력
   if len(stack) != 0:
     return False
