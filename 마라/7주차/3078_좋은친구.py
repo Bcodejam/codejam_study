@@ -17,9 +17,9 @@ for record in range(N) :
         queueList[nameLength].append(record)
     else :
         if record - queueList[nameLength][-1] <= K :
-            for s in queueList[nameLength] :
-                if record - s <= K :
-                    answer += 1
+            while record - queueList[nameLength][0] > K :
+                queueList[nameLength].popleft()
+            answer += len(queueList[nameLength])
             queueList[nameLength].append(record)
 
 print(answer)
