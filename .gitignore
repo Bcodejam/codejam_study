@@ -1,2 +1,10 @@
 # 연습파일
 리처드/트레이닝/
+.idea/misc.xml
+.idea/modules.xml
+.idea/inspectionProfiles/profiles_settings.xml
+.idea/vcs.xml
+.vscode/launch.json
+test.py
+.idea/codejam_study.iml
+

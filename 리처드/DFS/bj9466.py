@@ -4,15 +4,16 @@ input = sys.stdin.readline
 
 test = int(input().rstrip())
 
-def dfs(i, chk, tmp):
+def dfs(i, chk, tmp, a):
     chk += 1
+    a.append(1)
     if tmp == list_n[i-1]-1:
         print(tmp)
         return chk
     if chk == n or i == list_n[i-1]:
         # print(chk)
         return 0
-    return dfs(list_n[i-1], chk, tmp)
+    return dfs(list_n[i-1], chk, tmp, a)
 
 for _ in range(test):
     n = int(input().rstrip())
@@ -21,7 +22,7 @@ for _ in range(test):
     list_chk = [0]*n
     for i in range(n):
         if list_chk[i-1] == 0:
-            ans += dfs(list_n[i], 0, i)
+            ans += dfs(list_n[i], 0, i, [])
     print(ans)
     print(n - ans)
 
